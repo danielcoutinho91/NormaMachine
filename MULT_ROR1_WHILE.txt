@@ -1,0 +1,20 @@
+#R0 = RO*R1
+set0 2
+while not0 0
+   inc 2
+   dec 0
+endwhile
+
+while not0 2
+   while not0 1
+      inc 0
+      inc 3
+      dec 1
+   endwhile
+   while not0 3
+      inc 1
+      dec 3
+   endwhile
+   dec 2
+endwhile
+      

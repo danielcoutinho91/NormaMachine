@@ -1,0 +1,19 @@
+#R1 = 0 IF RO IS EVEN
+#R1 = 1 IF R0 IS ODD
+
+add 1 0
+set 6 1
+set0 1
+set0 6
+
+for is0 0 dec
+   inc 6
+   if is0 1
+      inc 1
+   else
+      dec 1
+   endif
+endfor
+
+set 0 6
+set0 6

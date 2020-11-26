@@ -1,0 +1,13 @@
+#R63 fica com 0 se R0>R1
+#use: R0 R1 R60 R61 R63
+for is0 0 dec
+  for is6 1 inc
+    if is2 0
+      inc 0
+    else
+      dec 0
+    endif
+  endfor
+endfor
+inc 0
+inc 1  

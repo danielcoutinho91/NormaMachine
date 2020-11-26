@@ -1,0 +1,38 @@
+#R56=R0*R1
+#use: R0 R1 R56 R57 R58
+set0 56
+set0 57
+set0 58
+:multR0R1
+if is0 1
+  goto endmultR0R1
+endif
+#R2=R2+R0
+:add
+  if is0 0
+    goto midadd
+  endif
+    inc 56
+    inc 57
+    dec 0
+    goto add
+:midadd
+  if is0 57
+    goto endadd
+  endif
+  inc 0
+  dec 57
+  goto midadd
+:endadd
+  dec 1
+  inc 58
+  goto multR0R1
+:endmultR0R1
+#restore R1
+if is0 58
+  goto end
+endif
+  inc 1
+  dec 58
+  goto endmultR0R1
+:end
