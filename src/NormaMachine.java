@@ -267,6 +267,7 @@ public class NormaMachine {
 		labelReg01.setText("R01 = " + textFieldRegister1.getText());
 
 		index = 0;
+		labels.get(index).setBackground(Color.GREEN);
 	}
 
 	public void run() throws InterruptedException {
@@ -337,8 +338,6 @@ public class NormaMachine {
 		String instruction = instructions.get(index);
 		int nextIndex = index;
 
-//		printInstructionsLog(nextIndex);
-
 		// SetValue Register
 		if (instruction.trim().startsWith("set0")) {
 			String stringSet = instruction.trim().split(" ")[0];
@@ -364,6 +363,7 @@ public class NormaMachine {
 
 		// If
 		if (instruction.trim().startsWith("if")) {
+			// if is0 1
 			String condition = instruction.trim().split(" ")[1];
 			int conditionValue = Integer.parseInt(condition.split("is")[1]);
 			int rIndex = Integer.parseInt(instruction.trim().split(" ")[2]);
@@ -392,7 +392,7 @@ public class NormaMachine {
 			return nextIndex;
 		}
 
-		// Else sem entrar no if
+		// Else quando entrou no if
 		if (instruction.trim().startsWith("else")) {
 			ifStack.push(1);
 			String nextInstruction = instruction;
@@ -422,6 +422,7 @@ public class NormaMachine {
 
 		// While
 		if (instruction.trim().startsWith("while")) {
+			// while not0 1
 			String condition = instruction.trim().split(" ")[1];
 			int rIndex = Integer.parseInt(instruction.trim().split(" ")[2]);
 			int conditionValue;

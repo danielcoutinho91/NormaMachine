@@ -1,5 +1,4 @@
 #R0 = RO*R1
-set0 2
 while not0 0
    inc 2
    dec 0
@@ -17,4 +16,3 @@ while not0 2
    endwhile
    dec 2
 endwhile
-      
